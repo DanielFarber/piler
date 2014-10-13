@@ -247,3 +247,7 @@ width: 330px;
 div.modal-body input#email {
 margin: 2% 2% 2% 0;
 }
+
+.red {
+    color: red;
+}
