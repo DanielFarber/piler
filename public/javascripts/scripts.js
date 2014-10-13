@@ -6,13 +6,6 @@ window.onload = function(){
     $('div.sidebar').append(template);
   });
 
-//When you click a#profile, "User Profile" sidebar apppears
-  $('a#profile').click(function(){
-    $('div.sidebar').children().remove()
-  
-    var template = _.template( $("#user_profile_template").html() );
-    $('div.sidebar').append(template);
-  })
 
   $.get("/neighborhoods", function(neighborhood){
     neighborhoods = _.sortBy(neighborhood, function(neighborhoodObject) {return neighborhoodObject.name})
@@ -53,7 +46,10 @@ function RSS(neighborhood_id){
           $.get("/reports/"+reports[i].id+"/comments", function(comments){
             $(".modal-body").append("<h4>COMMENTS</h4>")
             for (var i = 0; i < comments.length; i ++){
-              $(".modal-body").append("<p>"+comments[i].content+"</p>")
+              var innards = "<div id='"+i+"'>"+comments[i].content+"</div>"
+              $.get("/users/"+comments[i].user_id, function(user){
+                $(".modal-body").append(innards + "<p>by "+user.name+"</p>")
+            })
             }
           
           })
