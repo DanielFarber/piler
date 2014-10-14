@@ -84,6 +84,7 @@
 
 	$('input#existing').click(function(){
 		$('input#email').parent('li').remove();
+		$('input#password').parent('li').remove();
 		$('input#anonymous').attr('checked', false);
 		var email_li = document.createElement('li');
 		var password_li = document.createElement('li'); 
@@ -138,6 +139,7 @@
 
 $('input#anonymous').click(function(){
 	$('input#email').parent('li').remove();
+	$('input#password').parent('li').remove();
 	$('input#existing').attr('checked', false);
 	$('button.post').click(function(){
 		var location = $('input#location').val();

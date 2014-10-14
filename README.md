@@ -12,7 +12,7 @@ Janine Rosen Shotaro Kamegai Daniel Farber Tegal Patel Trish Laws
 
 Technology used:
 
-The library has 4 modular connections which use Active_record to persist to the database(PostGresQL):
+The library has 4 modular connections which use Active_record to persist to the database(PostgreSQL):
 
 require_relative "../lib/comment.rb" require_relative "../lib/neighborhood.rb" require_relative "../lib/report.rb" require_relative "../lib/user.rb"
 
@@ -20,7 +20,7 @@ You need to bundle install the gem file first.
 
 The database is called 'piler' and can be created by running the schema.sql The database can be seeded using the seed.rb file
 
-The following scripts are being use: jquery
+The following scripts are being used: jquery
 
 underscore.js
 
